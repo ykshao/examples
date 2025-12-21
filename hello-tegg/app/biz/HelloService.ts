@@ -1,7 +1,7 @@
 import {
   AccessLevel,
   SingletonProto,
-} from '@eggjs/tegg';
+} from 'egg';
 
 @SingletonProto({
   accessLevel: AccessLevel.PUBLIC,

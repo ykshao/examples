@@ -3,12 +3,12 @@ import {
   HTTPMethod,
   HTTPMethodEnum,
   Context,
-  type EggContext,
+  HTTPContext,
   HTTPQuery,
   Middleware,
   Inject,
-} from '@eggjs/tegg';
-import type { EggLogger } from 'egg';
+  type Logger,
+} from 'egg';
 
 import { traceMethod } from '../middleware/trace_method.ts';
 import { HelloService } from '../biz/HelloService.ts';
@@ -20,13 +20,13 @@ export class HelloController {
   private readonly helloService: HelloService;
 
   @Inject()
-  private readonly logger: EggLogger;
+  private readonly logger: Logger;
 
   @HTTPMethod({
     method: HTTPMethodEnum.GET,
     path: '/hello',
   })
-  async hello(@Context() ctx: EggContext, @HTTPQuery() name: string) {
+  async hello(@HTTPContext() ctx: Context, @HTTPQuery() name: string) {
     this.logger.info('access url: %s', ctx.url);
 
     const message = await this.helloService.hello(name);

@@ -23,10 +23,6 @@
   "license": "MIT",
   "dependencies": {
     "@eggjs/scripts": "beta",
-    "@eggjs/tegg": "beta",
-    "@eggjs/tegg-config": "beta",
-    "@eggjs/tegg-controller-plugin": "beta",
-    "@eggjs/tegg-plugin": "beta",
     "egg": "beta"
   },
   "devDependencies": {
@@ -37,8 +33,7 @@
     "@eggjs/mock": "beta",
     "eslint": "8",
     "eslint-config-egg": "14",
-    "typescript": "5",
-    "koa-compose": "4.1.0"
+    "typescript": "5"
   },
   "repository": "git@github.com:eggjs/examples.git",
   "engines": {
